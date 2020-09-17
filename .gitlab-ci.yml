@@ -1,5 +1,5 @@
 image:
-  name: golang:1.12.5-stretch
+  name: golang:1.15.2-buster
   entrypoint: ["/bin/sh", "-c"]
 
 stages:
@@ -39,9 +39,9 @@ compile:
 #    entrypoint: ["/bin/sh", "-c"]
 #  script:
 #    - echo "=> We already have artifact sotrage in GitLab! This is for demonstational purposes only."
-#    - mc config host add edenmalmoe https://s3.edenmal.net ${ACCESS_KEY} ${SECRET_KEY} S3v4
-#    - mc mb -p edenmalmoe/build-release-${CI_PROJECT_NAME}/
-#    - mc cp app edenmalmoe/build-release-${CI_PROJECT_NAME}/
+#    - mc config host add mys3host https://my-s3-host.example.com ${ACCESS_KEY} ${SECRET_KEY} S3v4
+#    - mc mb -p mys3host/build-release-${CI_PROJECT_NAME}/
+#    - mc cp app mys3host/build-release-${CI_PROJECT_NAME}/
 
 image_build:
   stage: release
